@@ -61,7 +61,7 @@ button[aria-selected="true"] {
 """, unsafe_allow_html=True)
 
 # Load dataset
-df = pd.read_csv("data/DOHMH_New_York_City_Restaurant_Inspection_Results.csv")
+df = pd.read_csv("data/sample_restaurant_data.csv")
 
 # 1. Dashboard Layout & Standards Config
 st.set_page_config(layout="wide", page_title="NYC Restaurant Inspection Insights")
@@ -107,7 +107,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 @st.cache_data
 def load_and_clean_dashboard_data():
     # Targets your exact dataset path inside the data folder
-    df = pd.read_csv("data/DOHMH_New_York_City_Restaurant_Inspection_Results.csv")
+    df = pd.read_csv("data/sample_restaurant_data.csv")
     df.drop_duplicates(inplace=True)
     
     # Fill text columns with "Unknown" and handle types properly
